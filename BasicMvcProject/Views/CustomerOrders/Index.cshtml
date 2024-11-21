@@ -1,0 +1,40 @@
+﻿@Model BasicMvcProject.Models.CustomerOrders
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Customer Details</title>
+</head>
+<body>
+
+    <h2>Customer Details</h2>
+    <p><strong>Id:</strong> @Model.Customer.Id</p>
+    <p><strong>Name:</strong> @Model.Customer.Name</p>
+    <p><strong>Sur Name:</strong> @Model.Customer.SurName</p>
+    <p><strong>Email:</strong> @Model.Customer.Email</p>
+
+    <h3>Order Details</h3>
+    <table border="2"  width="100%">
+        <tr>
+            <th>Order Id </th>
+            <th>Price</th>
+            <th>Marka</th>
+            <th>Stok</th>
+        </tr>
+        @foreach (var order in Model.Orders)
+        {
+            <tr>
+                <td>@order.Id</td>
+                <td>@order.Price</td>
+                <td>@order.ProductName</td>
+                <td>@order.Quantity</td>>
+            </tr>
+        }
+
+    </table>
+
+
+
+</body>
+</html>
